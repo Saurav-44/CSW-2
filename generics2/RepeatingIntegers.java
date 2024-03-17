@@ -8,7 +8,7 @@ public class RepeatingIntegers {
         int arr[] = {32,22,44,32,71,22,21,44};
         int count = 0;
 
-        for(Integer ele : arr) {
+        for(int ele : arr) {
             if(!hs.add(ele)) {
                 duplicates.add(ele);
                 count++;
