@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class BookClass {
     public static void main(String[] args) {
@@ -48,6 +49,11 @@ class Book {
     public int getQuantity() {
         return quantity;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + id + ", Name: " + name + ", Author: " + author + ", Quantity: " + quantity;
+    }
     
 }
 
@@ -63,8 +69,15 @@ class Library {
     }
 
     public void display() {
-       for(Integer key : bks.keySet()) {
-        System.out.println("Key = " + key + " Val = " + bks.get(key));
+    //    for(Integer key : bks.keySet()) {
+    //     System.out.println("Key = " + key + " Val = " + bks.get(key));
+    //    }
+
+       Iterator<Integer> it = bks.keySet().iterator();
+       while (it.hasNext()) {
+        int key = it.next();
+        Book val = bks.get(key);
+        System.out.println(key + " " + val);
        }
     }
 
