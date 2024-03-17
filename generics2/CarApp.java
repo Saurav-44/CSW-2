@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class CarApp {
     public static void main(String[] args) {
@@ -10,7 +9,6 @@ public class CarApp {
         cr.add(new Car(2017, "Audi", 45));
         cr.add(new Car(2015, "BMW", 55));
 
-        Collections.sort(cr);
 
         for(int i = 0; i < cr.size(); i++) {
             System.out.println(cr.get(i) + " ");
@@ -31,7 +29,7 @@ class Car implements Comparable<Car> {
 
     @Override
     public int compareTo(Car cr) {
-        return Integer.compare(this.stock, cr.stock);
+        return this.stock - cr.stock;
     }
 
     @Override 
