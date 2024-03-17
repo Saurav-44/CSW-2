@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class AddressClass {
@@ -7,11 +8,18 @@ public class AddressClass {
         tm.put("Saurav", new Address("B32", "Rairangpur", "Bahalda"));
         tm.put("Som", new Address("B31", "Kucheibudi", "Baripada"));
 
-        Iterator<String> it = tm.keySet().iterator();
-        while(it.hasNext()) {
-            String name = it.next();
-            Address ad = tm.get(name);
-            System.out.println("Name = " + name + "," + " Address = " + ad);
+       
+        // Iterator<String> it = tm.keySet().iterator();
+        // while(it.hasNext()) {
+        //     String name = it.next();
+        //     Address ad = tm.get(name);
+        //     System.out.println("Name = " + name + "," + " Address = " + ad);
+        // }
+        Set<String> st = tm.keySet();
+        // System.out.println(st);
+
+        for(String k : st) {
+            System.out.println(k + " " + tm.get(k));
         }
     }
 }
