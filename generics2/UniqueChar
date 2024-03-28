@@ -1,0 +1,26 @@
+import java.util.HashSet;
+
+public class UniqueCharacterFinder {
+    public static void findUniqueCharacters(String str) {
+        HashSet<Character> set = new HashSet<>();
+        HashSet<Character> unique = new HashSet<>();
+
+        for (char c : str.toCharArray()) {
+            if (!set.add(c)) {
+                unique.remove(c);
+            } else {
+                unique.add(c);
+            }
+        }
+
+        System.out.println("Unique characters in the string are:");
+        for (char c : unique) {
+            System.out.print(c + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        String input = "abacdbe";
+        findUniqueCharacters(input);
+    }
+}
